@@ -1,16 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { ModuleWithProviders } from "@angular/core";
+import { FormsModule }    from '@angular/forms';
+import { AppRoutingModule }     from './app-routing.module';
+ 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { GoatComponent } from './goat/goat.component';
 
+
+
+ 
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
+ 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+	HomeComponent,
+	GoatComponent
+	
+    
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
